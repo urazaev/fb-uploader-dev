@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+// set up variables
+
+$font-primary: "Roboto", Arial, sans-serif;
+
+$color-background-primary: #666;
+$color-background-white: #fff;
+$color-background-interactive: rgba(255, 255, 255, 0.5);
+$color-success: #42b983;
+
+$transition: all 220ms;
+
+// mixins
+
+@mixin flex-center() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+body {
+  background: $color-background-primary;
+  font-family: $font-primary;
+}
+
+.uploader__container {
+  padding-top: 5rem;
+  width: 800px;
+  margin: 0 auto;
+}
+
+.uploader__card {
+  border-radius: 6px;
+  background: $color-background-white;
+  padding: 1rem;
+  box-shadow: 2px 3px 10px rgba(0, 0, 0, .2);
+}
+
+input[type=file] {
+  display: none;
+}
+
+.uploader__preview {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: .5rem .5rem 1rem .5rem;
+  //padding-top: 1rem;
+}
+
+.uploader__preview-image {
+  position: relative;
+  margin-bottom: .5rem;
+  margin-right: .5rem;
+  overflow: hidden;
+}
+
+.uploader__preview-image img {
+  width: 180px;
+  height: auto;
+  display: block;
+}
+
+.uploader__preview-image.uploader__removing {
+  opacity: 0;
+  transition: all 300ms;
+}
+
+.uploader__preview-image:hover .uploader__preview-remove {
+  opacity: 1;
+}
+
+.uploader__preview-image:hover .uploader__preview-info {
+  bottom: 0;
+}
+
+.uploader__preview-remove {
+  opacity: 0;
+  transition: $transition;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 0;
+  top: 0;
+  font-weight: bold;
+  background: $color-background-interactive;
+
+  @include flex-center;
+
+  box-shadow: none;
+  border: none;
+  cursor: pointer;
+}
+
+.uploader__preview-info {
+  transition: $transition;
+  padding: 0 5px;
+
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: -3rem;
+  min-height: 25px;
+  font-size: 0.8rem;
+  background: $color-background-interactive;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  word-break: break-word;
+  max-width: 100%;
+
+}
+
+.uploader__preview-info span {
+  display: block;
+  word-break: inherit;
+  margin-right: 5px;
+}
+
+.uploader__preview-info-progress {
+  @include flex-center;
+
+  color: #ffffff;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: $color-success;
+  text-align: center;
+  transition: $transition;
+  width: 30%;
+}
+
+.btn {
+  color: $color-success;
+  position: relative;
+  border-radius: 99px;
+  border: 1px solid $color-success;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 0.5rem 1.5rem;
+  font-weight: 700;
+  outline: none;
+  background: #fff;
+  transition: $transition;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.btn.primary {
+  background: #42b983;
+  color: #ffffff;
+}
+
+.btn:active {
+  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .3);
+}
+
+.btn:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
