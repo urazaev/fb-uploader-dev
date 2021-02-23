@@ -1,7 +1,7 @@
 {
-  "name": "Firebase uploader",
-  "version": "1.0.0",
-  "description": "",
+  "name": "firebase-uploader",
+  "version": "1.1.0",
+  "description": "JS script for upload content to firebase",
   "main": "index.js",
   "scripts": {
     "serve": "parcel index.html"
@@ -15,5 +15,13 @@
   },
   "dependencies": {
     "firebase": "^8.2.6"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/urazaev/fb-uploader-dev.git"
+  },
+  "bugs": {
+    "url": "https://github.com/urazaev/fb-uploader-dev/issues"
+  },
+  "homepage": "https://github.com/urazaev/fb-uploader-dev#readme"
 }
